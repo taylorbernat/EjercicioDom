@@ -1,0 +1,34 @@
+#caja{
+    border: 2px solid black;
+    padding: 1%;
+    width: 98%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+#caja1{
+    
+    width: 21%;
+    height: auto;
+    border: 2px solid black;
+    background-color: lawngreen;
+}
+#caja2{
+    width: 21%;
+    height: auto;
+    border: 2px solid black;
+    background-color: lawngreen;
+}
+#caja3{
+    width: 21%;
+    height: auto;
+    border: 2px solid black;
+    background-color: lawngreen;
+}
+#caja4{
+    width: 21%;
+    height: auto;
+    border: 2px solid black;
+    background-color: lawngreen;
+}

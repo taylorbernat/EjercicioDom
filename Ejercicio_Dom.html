@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="Dom.css">    
+    </head>
+    <body>
+        <div id="caja">
+            <div id="caja1">
+                <div>
+                <h1 id="titulo">innerHTML</h1>
+                <p>Descripción: Permite obtener o establecer el contenido HTML de un elemento. Incluye etiquetas HTML, no solo texto.</p>
+                <button onclick="innerH('mensaje1','innerHTML devuelve o establece la sintaxis HTML describiendo los descendientes del elemento. Al establecerse se reemplaza la sintaxis HTML del elemento por la nueva.28 jul 2024')">cambiar</button>
+                </div>
+                <div id="extra1"><p id="mensaje1"></p></div>
+            </div>
+
+            <div id="caja2">
+                <div>
+                <h1 id="titulo"> textContent</h1>
+                <p >Descripción: Obtiene o establece el contenido de texto de un elemento, ignorando cualquier HTML. No se interpretan etiquetas, solo se muestra el texto.</p>
+                <button onclick="textC('mensaje2','Por otro lado, textContent se usa para obtener todo el texto de un elemento, independientemente de si es visible o no. Es más rápido porque no tiene en cuenta el estilo de presentación, lo que lo hace útil para extraer texto completo o limpiar un elemento de su contenido HTML. Si solo necesitas el contenido textual sin preocuparte por su visibilidad, textContent es el camino a seguir.')">cambiar</button>
+                </div>
+                <div id="extra2"><p  id="mensaje2"></p></div>
+            </div>
+
+            <div id="caja3">
+                <div>
+                <h1 id="titulo"> innerText</h1>
+                <p>Descripción: Similar a textContent, pero tiene en cuenta el estilo CSS y el formato. Solo devuelve el texto que es visible para el usuario.</p>
+                <button onclick="innerT('mensaje3','innerText se utiliza para obtener el texto que se muestra en la página, lo que significa que respeta el formato visual y no devuelve el texto de elementos ocultos. Es ideal cuando necesitas el contenido tal como lo ve el usuario, incluyendo saltos de línea y espacios. Por ejemplo, si quieres mostrar un mensaje o alertar al usuario, innerText es la opción adecuada.','querySelectorAll es un método en JavaScript que selecciona todos los elementos del DOM que coinciden con un selector CSS específico. Devuelve una NodeList con todos los elementos seleccionados, lo que permite iterar sobre ellos y aplicar modificaciones. Es útil para seleccionar múltiples elementos de manera eficiente y permite el uso de cualquier selector CSS válido. No se actualiza automáticamente si el DOM cambia, por lo que necesitas volver a llamarlo para obtener resultados actualizados')">cambiar</button>
+                </div>
+                <div id="extra3">
+                    <p  class="mensaje3"></p>
+                    <p  class="mensaje3"></p></div>
+            </div>
+
+            <div id="caja4">
+                <div>
+                <h1 id="titulo"> outerHTMl</h1>
+                <p >Descripción: Permite obtener o establecer el contenido HTML del elemento seleccionado, incluyendo el propio elemento. Es similar a innerHTML, pero incluye la etiqueta del elemento en sí.</p>
+                <button onclick="outerH('mensaje4','=HTML se utiliza para estructurar contenido en la web, creando elementos como encabezados, párrafos, enlaces, imágenes y formularios. Permite organizar la información de manera que los navegadores puedan interpretarla y mostrarla adecuadamente. Además, es esencial para la navegación entre páginas y contribuye a la optimización para motores de búsqueda.')">cambiar</button>
+                </div>
+                <div id="extra4"><p  id="mensaje4"></p></div>
+            </div>
+        </div>
+        
+
+        
+    </body>
+    <script>
+        function innerH(variable1,variable2){
+            var resultado=""
+            var cambiar=document.getElementById(variable1);
+            for (let i = 0; i < variable2.length; i += 26) {
+                resultado += variable2.slice(i,i+26) + "\n";
+            }
+            cambiar.innerHTML=resultado;
+        }
+        function textC(variable1,variable2){
+            const paragraph = document.querySelector('#'+variable1);
+
+            paragraph.textContent = variable2;
+
+        }
+        function innerT(variable1,variable2,variable3){
+            const paragraphs = document.querySelectorAll('.'+variable1);
+            paragraphs.forEach((paragraph, index) => {
+                index + 1;
+                if (index==1){
+                    paragraph.textContent = (variable2);
+
+                }
+                else{
+                    paragraph.textContent = (variable3);
+
+                }
+                
+            });
+
+        }
+        function outerH(variable1,variable2){
+            const paragraphs = document.getElementsByTagName('p');
+            paragraphs[8].outerHTML = variable2;
+
+            
+        }
+    </script>
+</html>
